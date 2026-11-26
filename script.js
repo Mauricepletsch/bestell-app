@@ -6,14 +6,25 @@ function init() {
     renderDishes();
 }
 
-// rendert die Gerichte solange Index kleiner als die Anzahl 
+// rendert die Gerichte in ihre Kategorie 
 
 function renderDishes() {
-    let dishesRef = document.getElementById('dishes');
-    dishesRef.innerHTML = "";
+    let burgerRef = document.getElementById('burger');
+    let pizzaRef = document.getElementById('pizza');
+    let saladRef = document.getElementById('salad');
+
+    burgerRef.innerHTML = "";
+    pizzaRef.innerHTML = "";
+    saladRef.innerHTML = "";
 
     for (let dishIndex = 0; dishIndex < myDishes.length; dishIndex++) {
-        dishesRef.innerHTML += getDishTemplate(dishIndex);
+        if (myDishes[dishIndex].category === "Burger") {
+            burgerRef.innerHTML += getDishTemplate(dishIndex);
+        } else if (myDishes[dishIndex].category === "Pizza") {
+            pizzaRef.innerHTML += getDishTemplate(dishIndex);
+        } else {
+            saladRef.innerHTML += getDishTemplate(dishIndex);
+        }
     }
 }
 

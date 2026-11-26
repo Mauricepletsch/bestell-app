@@ -55,4 +55,18 @@ function addToBasket(dishIndex) {
     } else {
         basket[index].amount++;
     }
+
+    renderBasket();
+}
+
+
+// Zeigt warenkorb
+
+function renderBasket() {
+    let basketRef = document.getElementById('basket');
+    basketRef.innerHTML = "";
+
+    for (let basketIndex = 0; basketIndex < basket.length; basketIndex++) {
+        basketRef.innerHTML += getBasketTemplate(basketIndex);
+    }
 }

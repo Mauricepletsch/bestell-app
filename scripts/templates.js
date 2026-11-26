@@ -9,3 +9,13 @@ function getDishTemplate(dishIndex) {
                 <button onclick="addToBasket(${dishIndex})">+</button>
             </div>`;
 }
+
+
+// HTML for gericht im warenkorb
+
+function getBasketTemplate(basketIndex) {
+    return `<div class="basket_item">
+                <p>${basket[basketIndex].amount} x ${basket[basketIndex].name}</p>
+                <p>${basket[basketIndex].price.toFixed(2)} €</p>
+            </div>`;
+}
